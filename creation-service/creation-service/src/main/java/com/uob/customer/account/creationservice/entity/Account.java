@@ -1,16 +1,19 @@
 package com.uob.customer.account.creationservice.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+
+import com.uob.customer.account.creationservice.util.AccountNumberGenerator;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -19,7 +22,6 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "account")
-@NoArgsConstructor
 /**
  * @param id
  * @param name
@@ -46,6 +48,10 @@ public class Account implements Serializable {
 	private String address;
 	private String gender;
 	private String accountNo;
-	private long balance;
+	private double balance;
+
+	public Account() {
+		accountNo = AccountNumberGenerator.generateAccountNumber();
+	}
 
 }

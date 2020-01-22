@@ -1,5 +1,7 @@
 package com.uob.customer.account.creationservice.dto;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,5 +28,5 @@ public class AccountRequestDto {
 	private String email;
 	private String address;
 	private String gender;
-	private long amount;
+	private int balance;
 }
